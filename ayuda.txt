@@ -14,3 +14,9 @@ En carpeta views, se harán archivos ejs que serán renderizados por express.
 Se usará heroku
 express-prueba-ejs-lynch
 Use Heroku CLI
+
+
+para subir cambios a heroku
+git add .
+git commit -am "make it better"
+git push heroku master

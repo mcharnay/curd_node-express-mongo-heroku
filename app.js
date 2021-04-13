@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 //motor de plantillas express
 app.set('view engine', 'ejs');
@@ -29,8 +29,14 @@ app.use((req, res, next) => {
     })
 })
 
+/*
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
+});
+*/
+
+app.listen(port, () => {
+  console.log('servidor a su servicio  en el puerto', port);
 });
 
 //midleware de 404
