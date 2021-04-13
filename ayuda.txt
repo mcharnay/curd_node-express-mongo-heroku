@@ -19,4 +19,7 @@ Use Heroku CLI
 para subir cambios a heroku
 git add .
 git commit -am "make it better"
-git push heroku master
+git push heroku 
+
+//correr comandos de package.json
+npm run dev

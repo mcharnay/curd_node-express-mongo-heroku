@@ -12,15 +12,9 @@ app.set('views', __dirname + '/views');
 //poniendo esta linea de código en esta posición, al poner localhost:3000, se abrirá primero el index.html
 app.use(express.static(__dirname + "/public"));
 
-
-//fue necesario borrar los archivos dentro de views
-app.get("/", (req, res) => {
-  res.render("index", {titulo : "mi titulo dinamico"});
-});
-
-app.get("/servicios", (req, res) => {
-    res.render("servicios", {tituloServicios : "Este es un mensaje de servicio"});
-});
+//Rutas web, a poner api, se pone api/index, y se saca el "."  del ./
+app.use('/', require('./router/RutasWeb'));
+app.use('/mascotas', require('./router/Mascotas'));
 
 app.use((req, res, next) => {
     res.status(404).render("404", {
