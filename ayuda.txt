@@ -1,0 +1,16 @@
+installar express
+npm i express
+
+//tener instalado nomdemon antes y levantar este servidor express en app.js con nodemon en el bash
+nodemon app
+
+//instgalar ejs en proyecto
+npm i ejs
+
+//usar el motor de plantillas
+
+En carpeta views, se harán archivos ejs que serán renderizados por express.
+
+Se usará heroku
+express-prueba-ejs-lynch
+Use Heroku CLI
