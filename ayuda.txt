@@ -93,5 +93,8 @@ meterse a https://dashboard.heroku.com/apps/express-prueba-ejs-lynch
 settings y config vars y se configura cada variable de entorno, USER PASSWORD Y DBNAME con los valores de .env
 Después irse a deploy, y hacer todo lo de deploy, para subir los cambios de git.
 
+heroku login , etc
+
+
 
 
