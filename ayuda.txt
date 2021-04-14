@@ -1,17 +1,27 @@
+
+Router:
+Ya que es dinámico gracias a la configuración en app.js, en routes se ponen las rutas.
+
+Gracias a los plugins, si se quiere trabajar con ejs poner ejs + ctrl + espacio.
+
+El array, por ahora viene desde routes Mascotas,js, y ese array se toma en views mascotas.ejs
+
+
+==============================================
 installar express
 npm i express
 
 //tener instalado nomdemon antes y levantar este servidor express en app.js con nodemon en el bash
 nodemon app
 
-//instgalar ejs en proyecto
+//instgalar ejs en proyecto, plugins para trabajar mejor en code . ejs snippets y ejs leng support
 npm i ejs
 
 //usar el motor de plantillas
 
 En carpeta views, se harán archivos ejs que serán renderizados por express.
 
-Se usará heroku
+Se usará heroku (ver docu de heroku)
 express-prueba-ejs-lynch
 Use Heroku CLI
 
@@ -23,3 +33,65 @@ git push heroku
 
 //correr comandos de package.json
 npm run dev
+
+===========================================================
+
+MongoDB
+
+1-.instalar mongoose en node
+npm install mongoose --save
+
+2-.poner las conexiones dentro de app.js
+
+3-.En la página de mongo ir a clusters > collections > add my own data
+
+4-.se creó un usuario y contraseña, que se usará dentro del proyecto.
+
+5-.configurar el "acceso a la red".
+Debajo de "Security", clica en "Network Access", clica en "ADD IP ADDRESS" + y ahí elige la conexión IP que prefieras utilizar.
+ Si no entiendes de IP's, basta con que selecciones la opción que dice "utilizar la ip que estoy usando actualmente" (o algo similar).
+
+6-.La uri viene de clusters > connect > connect your application y copiar la uri que sale ahí y pegarla en uri de tu app.js
+
+Si todo funcioan bien al iniciar nodemon saldrá un mensaje de Base de Datos Conectada.
+
+
+======
+
+Crear eschema.
+
+1-. Se crea carpeta models y dentro mascotas.js
+
+//ver schema en mongoose https://mongoosejs.com/docs/guide.html#definition
+
+El modelo creado se usará en la ruta. (router > Mascotas.js)
+
+
+///////////////////////////////////
+
+Flujo de Datos
+
+modelo >>>>> routes >>>>>> app
+
+//////////////////////////////////
+
+Variables de Entorno - dotenv
+Las varianles de entorno son user, password, dbname y port.
+
+instalar dotenv en bash del proyecto
+npm i dotenv
+
+en app.js importar dotenv
+require('dotenv').config()
+
+y crear en raiz archivo .env
+
+hay que tener ojo con el orden del código dentro de app.js
+
+Para configurar esas variables de entorno dentro de heroku, (user, pass, etc), dentro de heroku poner:
+meterse a https://dashboard.heroku.com/apps/express-prueba-ejs-lynch 
+settings y config vars y se configura cada variable de entorno, USER PASSWORD Y DBNAME con los valores de .env
+Después irse a deploy, y hacer todo lo de deploy, para subir los cambios de git.
+
+
+
