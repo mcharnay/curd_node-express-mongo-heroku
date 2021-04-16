@@ -1,5 +1,13 @@
 const express = require("express");
+const bodyParser = require('body-parser'); //import bodyParser
 const app = express();
+
+//otro midleware
+// parse application/x-www-form-urlencoded, procesa form por método post.
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json, sirve para mandar fetch con json
+app.use(bodyParser.json())
+
 
 //import dotenv
 require('dotenv').config()
@@ -36,7 +44,7 @@ app.use(express.static(__dirname + "/public"));
 //Rutas web, llama  los routes.
 //mascotas es http://localhost:3000/mascotas, require la ruta
 app.use('/', require('./router/RutasWeb'));
-app.use('/mascotas', require('./router/Mascotas'));
+app.use('/mascotas', require('./router/Mascotas')); //todo lo que se haga en routes, después de esto, siempre tendrá ´rimero el /mascotas
 
 //status para 404
 app.use((req, res, next) => {

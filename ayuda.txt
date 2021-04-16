@@ -96,5 +96,37 @@ Después irse a deploy, y hacer todo lo de deploy, para subir los cambios de git
 heroku login , etc
 
 
+/////////////////////////////////
+IMPORTANTE:
+
+en mi proyecto de heroku en cloud atlas, ir a network access >> ip acces list, y agregar la ip address 0.0.0.0/0, y re pushear el 
+proyecto.
+
+
+////////
+
+CRUD CON MongoDB
+
+Se usa body parser de npm, instalarlo en proyecto.
+npm i body-parser
+
+se hacen los imports dentro de app.js
+
+los name de los forms de crear.ejs, se mandan al modelo, debenb tener los mismos nombres.
+El form se envia a /mascotas, eso de las rutas.
+
+/////////////////////////////////
+
+OBTENER 1 SÓLO REGISTRO PARA MODIFICARLO
+
+1-. crear ruta en mascotas.js
+
+
+////////////////////////////////
+
+Borrar un archivos
+
+1-. EN la ruta de Mascotas.js crear ruta de delete
+
 
 
