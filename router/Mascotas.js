@@ -86,7 +86,7 @@ router.delete('/:id', async(req, res) => {
             })
         }else{
             res.json({
-                estado: flase,
+                estado: false,
                 mensaje: 'Falló eliminar!'
             })
         }
