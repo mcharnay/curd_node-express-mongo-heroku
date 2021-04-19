@@ -4,9 +4,6 @@ Ya que es dinámico gracias a la configuración en app.js, en routes se ponen la
 
 Gracias a los plugins, si se quiere trabajar con ejs poner ejs + ctrl + espacio.
 
-El array, por ahora viene desde routes Mascotas,js, y ese array se toma en views mascotas.ejs
-
-
 ==============================================
 installar express
 npm i express
@@ -50,6 +47,9 @@ npm install mongoose --save
 5-.configurar el "acceso a la red".
 Debajo de "Security", clica en "Network Access", clica en "ADD IP ADDRESS" + y ahí elige la conexión IP que prefieras utilizar.
  Si no entiendes de IP's, basta con que selecciones la opción que dice "utilizar la ip que estoy usando actualmente" (o algo similar).
+
+también poner aparte la ip 0.0.0.0/0, o no funcionará cuadno entres a heroku, sólo funcionará dentro de local.
+
 
 6-.La uri viene de clusters > connect > connect your application y copiar la uri que sale ahí y pegarla en uri de tu app.js
 
@@ -126,7 +126,7 @@ OBTENER 1 SÓLO REGISTRO PARA MODIFICARLO
 
 Borrar un archivos
 
-1-. EN la ruta de Mascotas.js crear ruta de delete
+1-. En la ruta de Mascotas.js crear ruta de delete
 
 
 
